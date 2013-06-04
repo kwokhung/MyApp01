@@ -39,6 +39,7 @@
 			"dojox/mobile/ContentPane"
         ], function (domConstruct, ready, registry) {
             ready(function () {
+                alert("Hi");
                 registry.byId("pane3").set("content", "<div data-dojo-type='dojox.mobile.RoundRect' shadow='true'>Thank you!</div>");
                 var dom = domConstruct.create("DIV", {
                     "data-dojo-type": "dojox.mobile.RoundRect",
@@ -50,7 +51,7 @@
         });
     </script>
 </head>
-<body>
+<body style="visibility: hidden;">
     <h1>My App 01</h1>
 
     <div id="foo" data-dojo-type="dojox.mobile.View">
