@@ -23,34 +23,24 @@
                     "zh",
                     "zh-cn"
             ],
-            dojoBlankHtmlUrl: "//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/resources/blank.html"
+            dojoBlankHtmlUrl: "http://ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/resources/blank.html"
         };
     </script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js">
     </script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojox/mobile/deviceTheme.js" data-dojo-config="mblThemeFiles: ['base']"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojox/mobile/deviceTheme.js" data-dojo-config="mblThemeFiles: ['base']"></script>
     <script type="text/javascript">
         alert("b");
         var app = {
-            // Application Constructor
             initialize: function () {
                 this.bindEvents();
             },
-            // Bind Event Listeners
-            //
-            // Bind any events that are required on startup. Common events are:
-            // 'load', 'deviceready', 'offline', and 'online'.
             bindEvents: function () {
                 document.addEventListener('deviceready', this.onDeviceReady, false);
             },
-            // deviceready Event Handler
-            //
-            // The scope of 'this' is the event. In order to call the 'receivedEvent'
-            // function, we must explicity call 'app.receivedEvent(...);'
             onDeviceReady: function () {
                 app.receivedEvent('deviceready');
             },
-            // Update DOM on a Received Event
             receivedEvent: function (id) {
                 alert("c");
                 require([
