@@ -10,6 +10,7 @@
     <script type="text/javascript" src="phonegap.js">
     </script>
     <script type="text/javascript">
+        alert("a");
         var dojoConfig = {
             selectorEngine: "acme",
             isDebug: true,
@@ -29,6 +30,7 @@
     </script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojox/mobile/deviceTheme.js" data-dojo-config="mblThemeFiles: ['base']"></script>
     <script type="text/javascript">
+        alert("b");
         require([
 			"dojo/dom-construct",
 			"dojo/ready",
@@ -39,7 +41,7 @@
 			"dojox/mobile/ContentPane"
         ], function (domConstruct, ready, registry) {
             ready(function () {
-                alert("Hi");
+                alert("c");
                 registry.byId("pane3").set("content", "<div data-dojo-type='dojox.mobile.RoundRect' shadow='true'>Thank you!</div>");
                 var dom = domConstruct.create("DIV", {
                     "data-dojo-type": "dojox.mobile.RoundRect",
@@ -51,7 +53,7 @@
         });
     </script>
 </head>
-<body style="visibility: hidden;">
+<body>
     <h1>My App 01</h1>
 
     <div id="foo" data-dojo-type="dojox.mobile.View">
