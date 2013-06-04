@@ -55,23 +55,20 @@
                 alert("c");
                 require([
                     "dojo/dom-construct",
-                    "dojo/ready",
                     "dijit/registry",
                     "dojox/mobile/parser",
                     "dojox/mobile",
                     "dojox/mobile/compat",
                     "dojox/mobile/ContentPane"
-                ], function (domConstruct, ready, registry) {
-                    ready(function () {
-                        alert("d");
-                        registry.byId("pane3").set("content", "<div data-dojo-type='dojox.mobile.RoundRect' shadow='true'>Thank you!</div>");
-                        var dom = domConstruct.create("DIV", {
-                            "data-dojo-type": "dojox.mobile.RoundRect",
-                            "data-dojo-props": "shadow:true"
-                        });
-                        dom.innerHTML = "DOM Tree";
-                        registry.byId("pane5").set("content", dom);
+                ], function (domConstruct, registry) {
+                    alert("d");
+                    registry.byId("pane3").set("content", "<div data-dojo-type='dojox.mobile.RoundRect' shadow='true'>Thank you!</div>");
+                    var dom = domConstruct.create("DIV", {
+                        "data-dojo-type": "dojox.mobile.RoundRect",
+                        "data-dojo-props": "shadow:true"
                     });
+                    dom.innerHTML = "DOM Tree";
+                    registry.byId("pane5").set("content", dom);
                 });
             }
         };
