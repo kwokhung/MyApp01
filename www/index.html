@@ -31,26 +31,53 @@
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojox/mobile/deviceTheme.js" data-dojo-config="mblThemeFiles: ['base']"></script>
     <script type="text/javascript">
         alert("b");
-        require([
-			"dojo/dom-construct",
-			"dojo/ready",
-			"dijit/registry",
-			"dojox/mobile/parser",
-			"dojox/mobile",
-			"dojox/mobile/compat",
-			"dojox/mobile/ContentPane"
-        ], function (domConstruct, ready, registry) {
-            ready(function () {
+        var app = {
+            // Application Constructor
+            initialize: function () {
+                this.bindEvents();
+            },
+            // Bind Event Listeners
+            //
+            // Bind any events that are required on startup. Common events are:
+            // 'load', 'deviceready', 'offline', and 'online'.
+            bindEvents: function () {
+                document.addEventListener('deviceready', this.onDeviceReady, false);
+            },
+            // deviceready Event Handler
+            //
+            // The scope of 'this' is the event. In order to call the 'receivedEvent'
+            // function, we must explicity call 'app.receivedEvent(...);'
+            onDeviceReady: function () {
+                app.receivedEvent('deviceready');
+            },
+            // Update DOM on a Received Event
+            receivedEvent: function (id) {
                 alert("c");
-                registry.byId("pane3").set("content", "<div data-dojo-type='dojox.mobile.RoundRect' shadow='true'>Thank you!</div>");
-                var dom = domConstruct.create("DIV", {
-                    "data-dojo-type": "dojox.mobile.RoundRect",
-                    "data-dojo-props": "shadow:true"
+                require([
+                    "dojo/dom-construct",
+                    "dojo/ready",
+                    "dijit/registry",
+                    "dojox/mobile/parser",
+                    "dojox/mobile",
+                    "dojox/mobile/compat",
+                    "dojox/mobile/ContentPane"
+                ], function (domConstruct, ready, registry) {
+                    ready(function () {
+                        alert("d");
+                        registry.byId("pane3").set("content", "<div data-dojo-type='dojox.mobile.RoundRect' shadow='true'>Thank you!</div>");
+                        var dom = domConstruct.create("DIV", {
+                            "data-dojo-type": "dojox.mobile.RoundRect",
+                            "data-dojo-props": "shadow:true"
+                        });
+                        dom.innerHTML = "DOM Tree";
+                        registry.byId("pane5").set("content", dom);
+                    });
                 });
-                dom.innerHTML = "DOM Tree";
-                registry.byId("pane5").set("content", dom);
-            });
-        });
+            }
+        };
+        alert("e");
+        app.initialize();
+        alert("f");
     </script>
 </head>
 <body>
