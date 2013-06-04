@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+</head>
+<body>
+    <div class="app">
+        <h1>Apache Cordova</h1>
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Xiao Mi is Ready</p>
+        </div>
+    </div>
+    <div id="platform" style="font-size: 50px;">
+    </div>
+    <div id="version" style="font-size: 50px;">
+    </div>
+    <div id="width" style="font-size: 50px;">
+    </div>
+    <div id="height" style="font-size: 50px;">
+    </div>
+    <div style="font-size: 50px;">
+        <span id="x"></span>
+        <span>&nbsp;/&nbsp;
+			</span>
+        <span id="y"></span>
+        <span>&nbsp;/&nbsp;
+			</span>
+        <span id="z"></span>
+    </div>
+    <div id="h" style="font-size: 50px;">
+    </div>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+</html>
