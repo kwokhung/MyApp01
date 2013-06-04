@@ -33,6 +33,6 @@
   <preference name="android-minSdkVersion"      value="7" />
   <preference name="android-installLocation"    value="auto" />
 
-  <access origin="http://127.0.0.1*"/>
+  <access origin="*" />
 
 </widget>
