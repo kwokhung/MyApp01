@@ -34,7 +34,6 @@
                 app.receivedEvent("deviceready");
             },
             receivedEvent: function (id) {
-                alert(id);
                 require(["dojox/mobile", "dojox/mobile/parser", "dojox/mobile/compat", "dojox/mobile/deviceTheme",
                     "dojox/dgauges/components/default/CircularLinearGauge",
                     "dojox/dgauges/components/default/SemiCircularLinearGauge",
@@ -47,7 +46,7 @@
             }
         };
         app.initialize();
-        //app.receivedEvent("deviceready");
+        app.receivedEvent("deviceready");
     </script>
 </head>
 <!--body style="-webkit-user-select: none; outline: none; visibility: hidden;"-->
