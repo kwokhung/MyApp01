@@ -4,7 +4,23 @@
     <title>My App 01</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js" data-dojo-config="parseOnLoad: true, mblAlwaysResizeOnTransition: true"></script>
+    <script type="text/javascript">
+        var dojoConfig = {
+            selectorEngine: "acme",
+            isDebug: true,
+            parseOnLoad: true,
+            async: true,
+            hashPollFrequency: 100,
+            locale: (location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "en"),
+            extraLocale: [
+                    "en",
+                    "zh",
+                    "zh-cn"
+            ],
+            dojoBlankHtmlUrl: "//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/resources/blank.html"
+        };
+    </script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
     <script type="text/javascript">
         require(["dojox/mobile", "dojox/mobile/parser", "dojox/mobile/compat", "dojox/mobile/deviceTheme",
                     "dojox/dgauges/components/default/CircularLinearGauge",
