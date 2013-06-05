@@ -18,10 +18,10 @@
                     "zh",
                     "zh-cn"
             ],
-            dojoBlankHtmlUrl: "//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/resources/blank.html"
+            dojoBlankHtmlUrl: "js/release/dojo/resources/blank.html"
         };
     </script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
+    <script type="text/javascript" src="js/release/dojo/dojo.js"></script>
     <script type="text/javascript">
         var app = {
             initialize: function () {
@@ -34,15 +34,16 @@
                 app.receivedEvent("deviceready");
             },
             receivedEvent: function (id) {
-                require(["dojox/mobile", "dojox/mobile/parser", "dojox/mobile/compat", "dojox/mobile/deviceTheme",
+                require([
+                    "dojox/mobile",
+                    "dojox/mobile/parser",
+                    "dojox/mobile/compat",
+                    "dojox/mobile/deviceTheme",
                     "dojox/dgauges/components/default/CircularLinearGauge",
-                    "dojox/dgauges/components/default/SemiCircularLinearGauge",
-                    "dojox/dgauges/components/default/VerticalLinearGauge",
                     "dojox/dgauges/components/default/HorizontalLinearGauge",
                     "dojox/dgauges/components/classic/CircularLinearGauge",
-                    "dojox/dgauges/components/classic/SemiCircularLinearGauge",
-                    "dojox/dgauges/components/classic/VerticalLinearGauge",
-                    "dojox/dgauges/components/classic/HorizontalLinearGauge"]);
+                    "dojox/dgauges/components/classic/HorizontalLinearGauge"
+                ]);
             }
         };
         app.initialize();
@@ -55,8 +56,8 @@
         <h1 data-dojo-type="dojox.mobile.Heading">Gauges Ver 001.003</h1>
         <h2 data-dojo-type="dojox.mobile.RoundRectCategory">Gauges Themes</h2>
         <ul data-dojo-type="dojox.mobile.RoundRectList">
-            <li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveto="defaultGauges" transition="slide">Default 				</li>
-            <li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveto="classicGauges" transition="slide">Classic 				</li>
+            <li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveto="defaultGauges" transition="slide">Default</li>
+            <li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveto="classicGauges" transition="slide">Classic</li>
         </ul>
     </div>
     <div id="defaultGauges" data-dojo-type="dojox.mobile.View">
