@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My App 01</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <style type="text/css">
+        @import "css/index.css";
+    </style>
+    <script type="text/javascript" src="phonegap.js">
+    </script>
+    <script type="text/javascript">
+        alert("a");
+        var dojoConfig = {
+            selectorEngine: "acme",
+            isDebug: true,
+            parseOnLoad: true,
+            async: true,
+            hashPollFrequency: 100,
+            locale: (location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "en"),
+            extraLocale: [
+                    "en",
+                    "zh",
+                    "zh-cn"
+            ],
+            dojoBlankHtmlUrl: "//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/resources/blank.html"
+        };
+    </script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js">
+    </script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojox/mobile/deviceTheme.js" data-dojo-config="mblThemeFiles: ['base']"></script>
+    <script type="text/javascript">
+        alert("b");
+        var app = {
+            initialize: function () {
+                this.bindEvents();
+            },
+            bindEvents: function () {
+                document.addEventListener('deviceready', this.onDeviceReady, false);
+            },
+            onDeviceReady: function () {
+                app.receivedEvent('deviceready');
+            },
+            receivedEvent: function (id) {
+                alert("c");
+                require([
+                    "dojo/dom-construct",
+                    "dijit/registry",
+                    "dojox/mobile/parser",
+                    "dojox/mobile",
+                    "dojox/mobile/compat",
+                    "dojox/mobile/ContentPane"
+                ], function (domConstruct, registry) {
+                    alert("d");
+                    registry.byId("pane3").set("content", "<div data-dojo-type='dojox.mobile.RoundRect' shadow='true'>Thank you!</div>");
+                    var dom = domConstruct.create("DIV", {
+                        "data-dojo-type": "dojox.mobile.RoundRect",
+                        "data-dojo-props": "shadow:true"
+                    });
+                    dom.innerHTML = "DOM Tree";
+                    registry.byId("pane5").set("content", dom);
+                });
+            }
+        };
+        alert("e");
+        app.initialize();
+        app.receivedEvent();
+        alert("f");
+    </script>
+</head>
+<body>
+    <h1>My App 01</h1>
+
+    <div id="foo" data-dojo-type="dojox.mobile.View">
+        <h1 data-dojo-type="dojox.mobile.Heading">ContentPane</h1>
+
+        <h2 data-dojo-type="dojox.mobile.RoundRectCategory">Pane1</h2>
+        <div id="pane1" data-dojo-type="dojox.mobile.ContentPane"
+            content="&lt;div data-dojo-type='dojox.mobile.RoundRect' shadow='true'&gt;Thank you!&lt;/div&gt;">
+        </div>
+
+        <h2 data-dojo-type="dojox.mobile.RoundRectCategory">Pane2</h2>
+
+        <h2 data-dojo-type="dojox.mobile.RoundRectCategory">Pane3</h2>
+        <div id="pane3" data-dojo-type="dojox.mobile.ContentPane"></div>
+
+        <h2 data-dojo-type="dojox.mobile.RoundRectCategory">Pane4</h2>
+        <div id="pane4" data-dojo-type="dojox.mobile.ContentPane"></div>
+
+        <h2 data-dojo-type="dojox.mobile.RoundRectCategory">Pane5</h2>
+        <div id="pane5" data-dojo-type="dojox.mobile.ContentPane"></div>
+    </div>
+</body>
+</html>
