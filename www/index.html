@@ -23,15 +23,39 @@
     </script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
     <script type="text/javascript">
-        require(["dojox/mobile", "dojox/mobile/parser", "dojox/mobile/compat", "dojox/mobile/deviceTheme",
-                    "dojox/dgauges/components/default/CircularLinearGauge",
-                    "dojox/dgauges/components/default/SemiCircularLinearGauge",
-                    "dojox/dgauges/components/default/VerticalLinearGauge",
-                    "dojox/dgauges/components/default/HorizontalLinearGauge",
-                    "dojox/dgauges/components/classic/CircularLinearGauge",
-                    "dojox/dgauges/components/classic/SemiCircularLinearGauge",
-                    "dojox/dgauges/components/classic/VerticalLinearGauge",
-                    "dojox/dgauges/components/classic/HorizontalLinearGauge"]);
+        var app = {
+            initialize: function () {
+                this.bindEvents();
+            },
+            bindEvents: function () {
+                document.addEventListener('deviceready', this.onDeviceReady, false);
+            },
+            onDeviceReady: function () {
+                app.receivedEvent('deviceready');
+            },
+            receivedEvent: function (id) {
+                alert("c");
+                require([
+                    "dojo/dom-construct",
+                    "dijit/registry",
+                    "dojox/mobile/parser",
+                    "dojox/mobile",
+                    "dojox/mobile/compat",
+                    "dojox/mobile/ContentPane"
+                ], function (domConstruct, registry) {
+                    require(["dojox/mobile", "dojox/mobile/parser", "dojox/mobile/compat", "dojox/mobile/deviceTheme",
+                                "dojox/dgauges/components/default/CircularLinearGauge",
+                                "dojox/dgauges/components/default/SemiCircularLinearGauge",
+                                "dojox/dgauges/components/default/VerticalLinearGauge",
+                                "dojox/dgauges/components/default/HorizontalLinearGauge",
+                                "dojox/dgauges/components/classic/CircularLinearGauge",
+                                "dojox/dgauges/components/classic/SemiCircularLinearGauge",
+                                "dojox/dgauges/components/classic/VerticalLinearGauge",
+                                "dojox/dgauges/components/classic/HorizontalLinearGauge"]);
+                });
+            }
+        };
+        app.initialize();
     </script>
 </head>
 <body style="-webkit-user-select: none; outline: none; visibility: hidden;">
