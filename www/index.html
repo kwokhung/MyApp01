@@ -35,24 +35,15 @@
             },
             receivedEvent: function (id) {
                 alert("c");
-                require([
-                    "dojo/dom-construct",
-                    "dijit/registry",
-                    "dojox/mobile/parser",
-                    "dojox/mobile",
-                    "dojox/mobile/compat",
-                    "dojox/mobile/ContentPane"
-                ], function (domConstruct, registry) {
-                    require(["dojox/mobile", "dojox/mobile/parser", "dojox/mobile/compat", "dojox/mobile/deviceTheme",
-                                "dojox/dgauges/components/default/CircularLinearGauge",
-                                "dojox/dgauges/components/default/SemiCircularLinearGauge",
-                                "dojox/dgauges/components/default/VerticalLinearGauge",
-                                "dojox/dgauges/components/default/HorizontalLinearGauge",
-                                "dojox/dgauges/components/classic/CircularLinearGauge",
-                                "dojox/dgauges/components/classic/SemiCircularLinearGauge",
-                                "dojox/dgauges/components/classic/VerticalLinearGauge",
-                                "dojox/dgauges/components/classic/HorizontalLinearGauge"]);
-                });
+                require(["dojox/mobile", "dojox/mobile/parser", "dojox/mobile/compat", "dojox/mobile/deviceTheme",
+                            "dojox/dgauges/components/default/CircularLinearGauge",
+                            "dojox/dgauges/components/default/SemiCircularLinearGauge",
+                            "dojox/dgauges/components/default/VerticalLinearGauge",
+                            "dojox/dgauges/components/default/HorizontalLinearGauge",
+                            "dojox/dgauges/components/classic/CircularLinearGauge",
+                            "dojox/dgauges/components/classic/SemiCircularLinearGauge",
+                            "dojox/dgauges/components/classic/VerticalLinearGauge",
+                            "dojox/dgauges/components/classic/HorizontalLinearGauge"]);
             }
         };
         app.initialize();
