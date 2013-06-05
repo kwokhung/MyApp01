@@ -5,6 +5,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <script type="text/javascript" src="phonegap.js"></script>
+    <script>require = null; define = null;</script>
     <script type="text/javascript">
         var dojoConfig = {
             selectorEngine: "acme",
@@ -34,6 +35,7 @@
                 app.receivedEvent("deviceready");
             },
             receivedEvent: function (id) {
+                alert(id);
                 require(["dojox/mobile", "dojox/mobile/parser", "dojox/mobile/compat", "dojox/mobile/deviceTheme",
                     "dojox/dgauges/components/default/CircularLinearGauge",
                     "dojox/dgauges/components/default/SemiCircularLinearGauge",
@@ -49,7 +51,8 @@
         //app.receivedEvent("deviceready");
     </script>
 </head>
-<body style="-webkit-user-select: none; outline: none; visibility: hidden;">
+<!--body style="-webkit-user-select: none; outline: none; visibility: hidden;"-->
+<body>
     <div id="home" data-dojo-type="dojox.mobile.View" selected="true">
         <h1 data-dojo-type="dojox.mobile.Heading">Gauges Ver 001.002</h1>
         <h2 data-dojo-type="dojox.mobile.RoundRectCategory">Gauges Themes</h2>
