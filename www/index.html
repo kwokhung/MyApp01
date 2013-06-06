@@ -4,7 +4,7 @@
     <title>My App 01</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <!--script type="text/javascript" src="phonegap.js"></script-->
+    <script type="text/javascript" src="phonegap.js"></script>
     <script type="text/javascript">
         var dojoConfig = {
             selectorEngine: "acme",
@@ -46,14 +46,13 @@
                 ]);
             }
         };
-        //app.initialize();
-        app.receivedEvent("deviceready");
+        app.initialize();
+        //app.receivedEvent("deviceready");
     </script>
 </head>
 <body style="-webkit-user-select: none; outline: none; visibility: hidden;">
-    <!--body-->
     <div id="home" data-dojo-type="dojox.mobile.View" selected="true">
-        <h1 data-dojo-type="dojox.mobile.Heading">Gauges Ver 001.004</h1>
+        <h1 data-dojo-type="dojox.mobile.Heading">Gauges Ver 001.005</h1>
         <h2 data-dojo-type="dojox.mobile.RoundRectCategory">Gauges Themes</h2>
         <ul data-dojo-type="dojox.mobile.RoundRectList">
             <li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveto="defaultGauges" transition="slide">Default</li>
