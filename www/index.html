@@ -21,16 +21,7 @@
         };
     </script>
     <script type="text/javascript" src="js/dojo/dojo.js"></script>
-    <script type="text/javascript">
-        require([
-            "dojox/mobile/deviceTheme"
-            ],
-            function (deviceTheme) {
-                alert(deviceTheme);
-                alert(deviceTheme.currentTheme);
-            });
-    </script>
-    <script type="text/javascript" src="phonegap.js"></script>
+    <!--script type="text/javascript" src="phonegap.js"></script-->
     <script type="text/javascript">
         var app = {
             initialize: function () {
@@ -55,8 +46,8 @@
                 ]);
             }
         };
-        app.initialize();
-        //app.receivedEvent("deviceready");
+        //app.initialize();
+        app.receivedEvent("deviceready");
     </script>
 </head>
 <body style="-webkit-user-select: none; outline: none; visibility: hidden;">
