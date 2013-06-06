@@ -1,15 +1,17 @@
 var profile = {
     action: "release",
-    releaseDir: "release",
-    selectorEngine: "acme",
-    stripConsole: "normal",
+    releaseDir: "dojo",
+    selectorEngine: "lite",
+    stripConsole: "all",
     copyTests: false,
-    cssOptimize: "comments.keepLines",
+    cssOptimize: "comments",
+    optimize: 'closure',
+    layerOptimize: 'closure',
     mini: true,
     webkitMobile: true,
     localeList: "en-us",
     layers: {
-        "dojo": {
+        "./dojo": {
             customBase: true,
             include: [
 				"dojox/mobile",
