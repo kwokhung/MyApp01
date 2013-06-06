@@ -21,6 +21,15 @@
         };
     </script>
     <script type="text/javascript" src="js/dojo/dojo.js"></script>
+    <script type="text/javascript">
+        require([
+            "dojox/mobile/deviceTheme"
+            ],
+            function (deviceTheme) {
+                alert(deviceTheme);
+                alert(deviceTheme.currentTheme);
+            });
+    </script>
     <script type="text/javascript" src="phonegap.js"></script>
     <script type="text/javascript">
         var app = {
