@@ -1,6 +1,7 @@
 var profile = {
+    basePath: ".",
     action: "release",
-    releaseDir: "dojo",
+    releaseDir: ".",
     selectorEngine: "lite",
     stripConsole: "all",
     copyTests: false,
@@ -11,7 +12,7 @@ var profile = {
     webkitMobile: true,
     localeList: "en-us",
     layers: {
-        "./dojo": {
+        "dojo/dojo": {
             customBase: true,
             include: [
 				"dojox/mobile",
@@ -29,11 +30,19 @@ var profile = {
                 "dojox/dgauges/components/default/CircularLinearGauge",
                 "dojox/dgauges/components/default/HorizontalLinearGauge",
                 "dojox/dgauges/components/classic/CircularLinearGauge",
-                "dojox/dgauges/components/classic/HorizontalLinearGauge"
+                "dojox/dgauges/components/classic/HorizontalLinearGauge",
+                "dojox/gfx/svg",
+                "dojox/gfx/shape",
+                "dojox/gfx/path"
             ]
         }
     },
     staticHasFeatures: {
+        "dojo-trace-api": 0,
+        "dojo-log-api": 0,
+        "dojo-publish-privates": 0,
+        "dojo-sync-loader": 0,
+        "dojo-test-sniff": 0,
         webkit: true
     },
     packages: [

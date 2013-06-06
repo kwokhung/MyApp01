@@ -4,7 +4,7 @@
     <title>My App 01</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <script type="text/javascript" src="phonegap.js"></script>
+    <!--script type="text/javascript" src="phonegap.js"></script-->
     <script type="text/javascript">
         var dojoConfig = {
             selectorEngine: "acme",
@@ -18,10 +18,10 @@
                     "zh",
                     "zh-cn"
             ],
-            dojoBlankHtmlUrl: "js/release/dojo/resources/blank.html"
+            dojoBlankHtmlUrl: "js/dojo/resources/blank.html"
         };
     </script>
-    <script type="text/javascript" src="js/release/dojo/dojo.js"></script>
+    <script type="text/javascript" src="js/dojo/dojo.js"></script>
     <script type="text/javascript">
         var app = {
             initialize: function () {
@@ -46,8 +46,8 @@
                 ]);
             }
         };
-        app.initialize();
-        //app.receivedEvent("deviceready");
+        //app.initialize();
+        app.receivedEvent("deviceready");
     </script>
 </head>
 <body style="-webkit-user-select: none; outline: none; visibility: hidden;">
