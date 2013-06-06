@@ -10,7 +10,7 @@ var profile = {
     layerOptimize: 'closure',
     mini: true,
     webkitMobile: true,
-    localeList: "en-us",
+    localeList: "en, zh, zh-cn",
     layers: {
         "dojo/dojo": {
             customBase: true,
