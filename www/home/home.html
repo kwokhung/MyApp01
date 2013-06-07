@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My App 01</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <div id="home" data-dojo-type="dojox/mobile/View" selected="true">
+        <h1 data-dojo-type="dojox/mobile/Heading">Gauges Ver 001.007</h1>
+        <h2 data-dojo-type="dojox/mobile/RoundRectCategory">Gauges Themes</h2>
+        <ul data-dojo-type="dojox/mobile/RoundRectList">
+            <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="defaultGauges" transition="slide">Default</li>
+            <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="classicGauges" transition="slide">Classic</li>
+        </ul>
+    </div>
+    <div id="defaultGauges" data-dojo-type="dojox/mobile/View">
+        <h1 data-dojo-type="dojox/mobile/Heading" back="Back" moveto="#home">Default Theme</h1>
+        <br />
+        <div data-dojo-type="dojox/dgauges/components/default/CircularLinearGauge" interactionmode="touch" style="height: 200px"></div>
+        <br />
+        <div data-dojo-type="dojox/dgauges/components/default/HorizontalLinearGauge" interactionmode="touch" style="height: 50px;"></div>
+    </div>
+    <div id="classicGauges" data-dojo-type="dojox/mobile/View">
+        <h1 data-dojo-type="dojox/mobile/Heading" back="Back" moveto="#home">Classic Theme</h1>
+        <br />
+        <div data-dojo-type="dojox/dgauges/components/classic/CircularLinearGauge" interactionmode="touch" style="height: 200px"></div>
+        <br />
+        <div data-dojo-type="dojox/dgauges/components/classic/HorizontalLinearGauge" interactionmode="touch" style="height: 50px;"></div>
+    </div>
+</body>
+</html>

@@ -1,7 +1,8 @@
 var profile = {
-    basePath: ".",
+    basePath: "..",
+    releaseDir: "../..",
+    releaseName: "MyApp01-Release",
     action: "release",
-    releaseDir: ".",
     selectorEngine: "lite",
     stripConsole: "all",
     copyTests: false,
@@ -11,15 +12,27 @@ var profile = {
     mini: true,
     webkitMobile: true,
     localeList: "en, zh, zh-cn",
+    /*resourceTags: {
+        amd: function(filename, mid){
+            return /index.html$/.test(filename);
+        },
+        declarative: function (filename) {
+            alert(filename);
+            return /\.htm(l)?$/.test(filename);
+        }
+    },*/
     layers: {
         "dojo/dojo": {
             customBase: true,
+            boot: true,
             include: [
-				"dojox/mobile",
-				"dojox/mobile/parser",
+                "dijit/registry",
+                "dojox/mobile",
+                "dojox/mobile/parser",
                 "dojox/mobile/compat",
                 "dojox/mobile/deviceTheme",
-				"dojox/mobile/View",
+                "dojox/mobile/ContentPane",
+                "dojox/mobile/View",
                 "dojox/mobile/Heading",
                 "dojox/mobile/RoundRectCategory",
                 "dojox/mobile/RoundRectList",
@@ -34,6 +47,7 @@ var profile = {
                 "dojox/gfx/svg",
                 "dojox/gfx/shape",
                 "dojox/gfx/path"
+                //"app/index.html"
             ]
         }
     },
@@ -46,17 +60,21 @@ var profile = {
         webkit: true
     },
     packages: [
-		{
-		    name: "dojo",
-		    location: "D:/dojo/dojo-release-1.9.0-src/dojo"
-		},
-		{
-		    name: "dijit",
-		    location: "D:/dojo/dojo-release-1.9.0-src/dijit"
-		},
-		{
-		    name: "dojox",
-		    location: "D:/dojo/dojo-release-1.9.0-src/dojox"
-		}
+        {
+            name: "dojo",
+            location: "D:/dojo/dojo-release-1.9.0-src/dojo"
+        },
+        {
+            name: "dijit",
+            location: "D:/dojo/dojo-release-1.9.0-src/dijit"
+        },
+        {
+            name: "dojox",
+            location: "D:/dojo/dojo-release-1.9.0-src/dojox"
+        }/*,
+        {
+            name: "app",
+            location: "."
+        }*/
     ]
 };
