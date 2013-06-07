@@ -11,6 +11,7 @@
         <ul data-dojo-type="dojox/mobile/RoundRectList">
             <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="defaultGauges" transition="slide">Default</li>
             <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="classicGauges" transition="slide">Classic</li>
+            <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="customSpinWheel" transition="slide">SpinWheel</li>
         </ul>
     </div>
     <div id="defaultGauges" data-dojo-type="dojox/mobile/View">
@@ -26,6 +27,27 @@
         <div data-dojo-type="dojox/dgauges/components/classic/CircularLinearGauge" interactionmode="touch" style="height: 200px"></div>
         <br />
         <div data-dojo-type="dojox/dgauges/components/classic/HorizontalLinearGauge" interactionmode="touch" style="height: 50px;"></div>
+    </div>
+    <div id="customSpinWheel" data-dojo-type="dojox/mobile/View">
+        <h1 data-dojo-type="dojox/mobile/Heading" back="Back" moveto="#home">Custom SpinWheel</h1>
+        <div id="spin1" data-dojo-type="dojox/mobile/SpinWheel">
+            <div data-dojo-type="dojox/mobile/SpinWheelSlot"
+                labels="A, B, C, D, E, F, G, H, I, J, K"
+                style="text-align: center; width: 40px;">
+            </div>
+            <div data-dojo-type="dojox/mobile/SpinWheelSlot"
+                labelfrom="3000" labelto="3100"
+                style="width: 70px;">
+            </div>
+            <div data-dojo-type="dojox/mobile/SpinWheelSlot"
+                labelfrom="0" labelto="9"
+                style="width: 30px;">
+            </div>
+            <div data-dojo-type="dojox/mobile/SpinWheelSlot"
+                labels="pt, px, cm"
+                style="width: 50px;">
+            </div>
+        </div>
     </div>
 </body>
 </html>
