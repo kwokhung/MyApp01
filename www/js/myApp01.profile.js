@@ -44,6 +44,7 @@ var profile = {
                 "dojox/dgauges/components/default/HorizontalLinearGauge",
                 "dojox/dgauges/components/classic/CircularLinearGauge",
                 "dojox/dgauges/components/classic/HorizontalLinearGauge",
+                "dojox/gfx/vml",
                 "dojox/gfx/svg",
                 "dojox/gfx/shape",
                 "dojox/gfx/path"
