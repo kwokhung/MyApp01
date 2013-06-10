@@ -70,6 +70,8 @@ var main = function () {
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
                             var myContact = navigator.contacts.create({ "displayName": "Au" });
+                            alert(myContact.displayName);
+                            alert(myContact.phoneNumbers);
 
                             if (myContact != null && myContact.phoneNumbers.length > 0) {
                                 registry.byId("txtMyPhone").set("value", myContact.phoneNumbers[0]);
@@ -78,7 +80,6 @@ var main = function () {
                             var options = new ContactFindOptions();
                             options.filter = "Au";
                             options.multiple = true;
-                            console.debug(options);
 
                             navigator.contacts.find(["displayName", "name"], function (contacts) {
                                 alert('Found ' + contacts.length + ' contacts.');
