@@ -25,15 +25,36 @@ var main = function () {
                 function (on, registry) {
                     on(registry.byId("blkMainContent"), "load", function () {
                         if (typeof device != "undefined") {
+                            on(document, "pause", function () {
+                                alert("Pause");
+                            });
+
+                            on(document, "resume", function () {
+                                alert("Resume");
+                            });
+
+                            on(document, "online", function () {
+                                alert("Online");
+                            });
+
+                            on(document, "offline", function () {
+                                alert("Offline");
+                            });
+
+                            on(document, "backbutton", function () {
+                                alert("Back");
+                            });
+
+                            on(document, "menubutton", function () {
+                                alert("Menu");
+                            });
+
+                            on(document, "searchbutton", function () {
+                                alert("Search");
+                            });
+
                             registry.byId("txtPlatform").set("value", device.platform);
                             registry.byId("txtVersion").set("value", device.version);
-
-                            /*document.addEventListener("menubutton", function () {
-                                alert("Menu");
-                            }, false);*/
-                            on(document, "menubutton", function () {
-                                alert("Menu again");
-                            });
                         }
 
                         if (typeof navigator != "undefined") {
