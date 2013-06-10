@@ -9,21 +9,9 @@
     <script type="text/javascript" src="phonegap.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript">
-        var app = {
-            initialize: function () {
-                this.bindEvents();
-            },
-            bindEvents: function () {
-                document.addEventListener("deviceready", this.onDeviceReady, false);
-            },
-            onDeviceReady: function () {
-                app.receivedEvent("deviceready");
-            },
-            receivedEvent: function (id) {
-                main();
-            }
-        };
-        app.initialize();
+        document.addEventListener("deviceready", function () {
+            main();
+        }, false);
     </script>
 </head>
 <body style="-webkit-user-select: none; outline: none; visibility: hidden;">
