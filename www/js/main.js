@@ -41,11 +41,21 @@ var main = function () {
 
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
-                            var myContact = navigator.contacts.create({ "displayName": "Brian" });
+                            /*var myContact = navigator.contacts.create({ "displayName": "Brian" });
 
                             if (myContact != null && myContact.phoneNumbers.length > 0) {
                                 registry.byId("txtMyPhone").set("value", myContact.phoneNumbers[0]);
-                            }
+                            }*/
+
+                            var options = new ContactFindOptions();
+                            options.filter = "Brian";
+                            options.multiple = true;
+
+                            navigator.contacts.find(["displayName", "name"], function (contacts) {
+                                alert('Found ' + contacts.length + ' contacts.');
+                            }, function (contactError) {
+                                alert('onError!');
+                            }, options);
                         }
                     });
                 });
