@@ -78,6 +78,7 @@ var main = function () {
                             var options = new ContactFindOptions();
                             options.filter = "Au";
                             options.multiple = true;
+                            console.debug(options);
 
                             navigator.contacts.find(["displayName", "name"], function (contacts) {
                                 alert('Found ' + contacts.length + ' contacts.');
