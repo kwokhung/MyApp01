@@ -69,14 +69,14 @@ var main = function () {
 
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
-                            var myContact = navigator.contacts.create({ "displayName": "\u6731\u570b\u96c4" });
+                            var myContact = navigator.contacts.create({ "displayName": "Au" });
 
                             if (myContact != null && myContact.phoneNumbers.length > 0) {
                                 registry.byId("txtMyPhone").set("value", myContact.phoneNumbers[0]);
                             }
 
                             var options = new ContactFindOptions();
-                            options.filter = "\u6731\u570b\u96c4";
+                            options.filter = "Au";
                             options.multiple = true;
 
                             navigator.contacts.find(["displayName", "name"], function (contacts) {
