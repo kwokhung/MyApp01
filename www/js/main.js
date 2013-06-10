@@ -27,6 +27,10 @@ var main = function () {
                         if (typeof device != "undefined") {
                             registry.byId("txtPlatform").set("value", device.platform);
                             registry.byId("txtVersion").set("value", device.version);
+
+                            document.addEventListener("menubutton", function () {
+                                alert("Menu");
+                            }, false);
                         }
 
                         if (typeof navigator != "undefined") {
@@ -47,7 +51,7 @@ var main = function () {
                                 registry.byId("txtMyPhone").set("value", myContact.phoneNumbers[0]);
                             }*/
 
-                            var options = new ContactFindOptions();
+                            /*var options = new ContactFindOptions();
                             options.filter = "Brian";
                             options.multiple = true;
 
@@ -55,7 +59,7 @@ var main = function () {
                                 alert('Found ' + contacts.length + ' contacts.');
                             }, function (contactError) {
                                 alert('onError!');
-                            }, options);
+                            }, options);*/
                         }
                     });
                 });
