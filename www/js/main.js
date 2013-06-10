@@ -24,22 +24,28 @@ var main = function () {
                 ],
                 function (on, registry) {
                     on(registry.byId("blkMainContent"), "load", function () {
-                        if (typeof (device) != "undefined") {
+                        if (typeof device != "undefined") {
                             registry.byId("txtPlatform").set("value", device.platform);
                             registry.byId("txtVersion").set("value", device.version);
                         }
 
-                        if (typeof (navigator) != "undefined") {
-                            var states = {};
-                            states[Connection.UNKNOWN] = 'Unknown connection';
-                            states[Connection.ETHERNET] = 'Ethernet connection';
-                            states[Connection.WIFI] = 'WiFi connection';
-                            states[Connection.CELL_2G] = 'Cell 2G connection';
-                            states[Connection.CELL_3G] = 'Cell 3G connection';
-                            states[Connection.CELL_4G] = 'Cell 4G connection';
-                            states[Connection.NONE] = 'No network connection';
+                        if (typeof navigator != "undefined") {
+                            var connectionStates = {};
+                            connectionStates[Connection.UNKNOWN] = 'Unknown connection';
+                            connectionStates[Connection.ETHERNET] = 'Ethernet connection';
+                            connectionStates[Connection.WIFI] = 'WiFi connection';
+                            connectionStates[Connection.CELL_2G] = 'Cell 2G connection';
+                            connectionStates[Connection.CELL_3G] = 'Cell 3G connection';
+                            connectionStates[Connection.CELL_4G] = 'Cell 4G connection';
+                            connectionStates[Connection.NONE] = 'No network connection';
 
-                            registry.byId("txtConnection").set("value", states[navigator.network.connection.type]);
+                            registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
+
+                            var myContact = navigator.contacts.create({ "displayName": "Brian" });
+
+                            if (myContact != null && myContact.phoneNumbers.length > 0) {
+                                registry.byId("txtMyPhone").set("value", myContact.phoneNumbers[0]);
+                            }
                         }
                     });
                 });
