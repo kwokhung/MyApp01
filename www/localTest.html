@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My App 01</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <script type="text/javascript">
+        var dojoConfig = {
+            selectorEngine: "lite",
+            isDebug: true,
+            parseOnLoad: true,
+            async: true,
+            hashPollFrequency: 100,
+            locale: (location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "en"),
+            extraLocale: [
+                "en",
+                "zh",
+                "zh-cn"
+            ],
+            dojoBlankHtmlUrl: "http://ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/resources/blank.html"
+        };
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+        main();
+    </script>
+</head>
+<body style="-webkit-user-select: none; outline: none; visibility: hidden;">
+    <div id="platform"></div>
+    <div data-dojo-type="dojox/mobile/ContentPane" data-dojo-props="href: 'home/home.html'">
+    </div>
+</body>
+</html>

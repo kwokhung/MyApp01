@@ -9,9 +9,10 @@
         <h1 data-dojo-type="dojox/mobile/Heading">Gauges Ver 1.0.5</h1>
         <h2 data-dojo-type="dojox/mobile/RoundRectCategory">Gauges Themes</h2>
         <ul data-dojo-type="dojox/mobile/RoundRectList">
-            <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="defaultGauges" transition="slide">Default</li>
-            <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="classicGauges" transition="slide">Classic</li>
-            <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="customSpinWheel" transition="slide">SpinWheel</li>
+            <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="defaultGauges" transition="slide">Default Theme</li>
+            <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="classicGauges" transition="slide">Classic Theme</li>
+            <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="customSpinWheel" transition="slide">Custom SpinWheel</li>
+            <li class="mblVariableHeight" data-dojo-type="dojox/mobile/ListItem" moveto="form" transition="slide">Form</li>
         </ul>
     </div>
     <div id="defaultGauges" data-dojo-type="dojox/mobile/View">
@@ -48,6 +49,22 @@
                 style="width: 50px;">
             </div>
         </div>
+    </div>
+    <div id="form" data-dojo-type="dojox/mobile/ScrollableView">
+        <h1 data-dojo-type="dojox/mobile/Heading" back="Back" moveto="#home">Form</h1>
+        <form>
+            <h2 data-dojo-type="dojox/mobile/RoundRectCategory">Phone Information</h2>
+            <div data-dojo-type="dojox/mobile/RoundRect">
+                <div data-dojo-type="dojox/mobile/FormLayout">
+                    <div>
+                        <label>Platform</label>
+                        <fieldset>
+                            <input id="txtPlatform" data-dojo-type="dojox/mobile/TextBox" value="abc" disabled />
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>
