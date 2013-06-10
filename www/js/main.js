@@ -21,9 +21,6 @@ var main = function () {
                     "dijit/registry"
                 ],
                 function (registry) {
-                    if (typeof (device) != "undefined") {
-                        document.getElementById("platform").innerHTML = device.platform;
-                    }
                 });
             });
         });
