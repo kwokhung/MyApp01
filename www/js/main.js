@@ -25,7 +25,7 @@ var main = function () {
                 function (on, registry) {
                     on(registry.byId("blkMainContent"), "load", function () {
                         if (typeof device != "undefined") {
-                            on(document, "pause", function () {
+                            /*on(document, "pause", function () {
                                 alert("Pause");
                             });
 
@@ -43,15 +43,15 @@ var main = function () {
 
                             on(document, "backbutton", function () {
                                 alert("Back");
-                            });
+                            });*/
 
                             on(document, "menubutton", function () {
                                 alert("Menu");
                             });
 
-                            on(document, "searchbutton", function () {
+                            /*on(document, "searchbutton", function () {
                                 alert("Search");
-                            });
+                            });*/
 
                             registry.byId("txtPlatform").set("value", device.platform);
                             registry.byId("txtVersion").set("value", device.version);
@@ -69,14 +69,14 @@ var main = function () {
 
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
-                            var myContact = navigator.contacts.create({ "displayName": "Brian" });
+                            var myContact = navigator.contacts.create({ "displayName": "\u6731\u570b\u96c4" });
 
                             if (myContact != null && myContact.phoneNumbers.length > 0) {
                                 registry.byId("txtMyPhone").set("value", myContact.phoneNumbers[0]);
                             }
 
                             var options = new ContactFindOptions();
-                            options.filter = "Brian";
+                            options.filter = "\u6731\u570b\u96c4";
                             options.multiple = true;
 
                             navigator.contacts.find(["displayName", "name"], function (contacts) {
