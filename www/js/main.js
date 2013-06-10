@@ -28,9 +28,12 @@ var main = function () {
                             registry.byId("txtPlatform").set("value", device.platform);
                             registry.byId("txtVersion").set("value", device.version);
 
-                            document.addEventListener("menubutton", function () {
+                            /*document.addEventListener("menubutton", function () {
                                 alert("Menu");
-                            }, false);
+                            }, false);*/
+                            on(document, "menubutton", function () {
+                                alert("Menu again");
+                            });
                         }
 
                         if (typeof navigator != "undefined") {
