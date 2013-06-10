@@ -24,7 +24,9 @@ var main = function () {
                 ],
                 function (on, registry) {
                     on(registry.byId("blkMainContent"), "load", function () {
+                        alert("loaded");
                         if (typeof (device) != "undefined") {
+                            alert("deviceReady");
                             registry.byId("txtPlatform").set("value", device.platform);
                         }
                     });

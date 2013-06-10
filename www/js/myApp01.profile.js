@@ -26,6 +26,8 @@ var profile = {
             customBase: true,
             boot: true,
             include: [
+                "dojo/on",
+                "dojo/domReady",
                 "dijit/registry",
                 "dojox/mobile",
                 "dojox/mobile/parser",
