@@ -75,7 +75,7 @@ var main = function () {
                                 registry.byId("txtMyPhone").set("value", myContact.phoneNumbers[0]);
                             }
 
-                            /*var options = new ContactFindOptions();
+                            var options = new ContactFindOptions();
                             options.filter = "Brian";
                             options.multiple = true;
 
@@ -83,7 +83,7 @@ var main = function () {
                                 alert('Found ' + contacts.length + ' contacts.');
                             }, function (contactError) {
                                 alert('onError!');
-                            }, options);*/
+                            }, options);
                         }
                     });
                 });
