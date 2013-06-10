@@ -18,9 +18,16 @@ var main = function () {
 
             ready(function () {
                 require([
-                    "dijit/registry"
+                    "dojo/on",
+                    "dijit/registry",
+                    "dojo/domReady!"
                 ],
-                function (registry) {
+                function (on, registry) {
+                    on(registry.byId("blkMainContent"), "load", function () {
+                        if (typeof (device) != "undefined") {
+                            registry.byId("txtPlatform").set("value", device.platform);
+                        }
+                    });
                 });
             });
         });
