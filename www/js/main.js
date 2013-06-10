@@ -27,7 +27,9 @@ var main = function () {
                         if (typeof (device) != "undefined") {
                             registry.byId("txtPlatform").set("value", device.platform);
                             registry.byId("txtVersion").set("value", device.version);
+                        }
 
+                        if (typeof (navigator) != "undefined") {
                             var states = {};
                             states[Connection.UNKNOWN] = 'Unknown connection';
                             states[Connection.ETHERNET] = 'Ethernet connection';
