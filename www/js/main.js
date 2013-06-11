@@ -71,13 +71,14 @@ var main = function () {
 
                             var myContact = navigator.contacts.create({ "displayName": "Au" });
                             alert(myContact.displayName);
+                            navigator.notification.alert(myContact.displayName, null, "displayName", 'OK');
                             alert(myContact.phoneNumbers);
 
                             if (myContact != null && myContact.phoneNumbers.length > 0) {
                                 registry.byId("txtMyPhone").set("value", myContact.phoneNumbers[0]);
                             }
 
-                            /*var options = new ContactFindOptions();
+                            var options = new ContactFindOptions();
                             options.filter = "Au";
                             options.multiple = true;
 
@@ -85,22 +86,7 @@ var main = function () {
                                 alert('Found ' + contacts.length + ' contacts.');
                             }, function (contactError) {
                                 alert('onError!');
-                            }, options);*/
-
-                            function onSuccess(contacts) {
-                                alert('Found ' + contacts.length + ' contacts.');
-                            };
-
-                            function onError(contactError) {
-                                alert('onError!');
-                            };
-
-                            // find all contacts with 'Bob' in any name field
-                            var options = new ContactFindOptions();
-                            options.filter = "Au";
-                            options.multiple = true;
-                            var fields = ["displayName", "name"];
-                            navigator.contacts.find(fields, onSuccess, onError, options);
+                            }, options);
                         }
                     });
                 });
