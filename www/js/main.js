@@ -69,9 +69,12 @@ var main = function () {
 
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
-                            var options = new ContactFindOptions();
-                            options.filter = "Linus";
-                            options.multiple = true;
+                            var options = new ContactFindOptions({
+                                filter: "Brian",
+                                multiple: true
+                            });
+                            //options.filter = "Linus";
+                            //options.multiple = true;
 
                             navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
                                 registry.byId("txtName").set("value", contacts[0].displayName);
