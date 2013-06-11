@@ -69,25 +69,22 @@ var main = function () {
 
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
-                            /*navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
-                                registry.byId("txtMyName").set("value", contacts[0].displayName);
-                                registry.byId("txtMyPhone").set("value", contacts[0].phoneNumbers[0].value);
+                            navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
+                                registry.byId("txtName").set("value", contacts[0].displayName);
+                                registry.byId("txtPhone").set("value", contacts[0].phoneNumbers[0].value);
                             }, function () {
                                 alert("Error getting contacts.");
                             }, new ContactFindOptions({
-                                filter: "Au",
+                                filter: "Brian",
                                 multiple: true
-                            }));*/
+                            }));
 
-                            navigator.notification.alert("Begin.", null, "getCurrentPosition", 'OK');
                             navigator.geolocation.getCurrentPosition(function (position) {
-                                navigator.notification.alert("Inside.", null, "getCurrentPosition", 'OK');
                                 registry.byId("txtLatitude").set("value", position.coords.latitude);
                                 registry.byId("txtLongitude").set("value", position.coords.longitude);
                             }, function () {
                                 alert("Error getting location.");
                             });
-                            navigator.notification.alert("End.", null, "getCurrentPosition", 'OK');
                         }
                     });
                 });
