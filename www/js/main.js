@@ -23,7 +23,7 @@ var main = function () {
                     "dojo/domReady!"
                 ],
                 function (on, registry) {
-                    on(registry.byId("blkMainContent"), "load", function () {
+                    on(registry.byId("blkMain"), "load", function () {
                         if (typeof device != "undefined") {
                             /*on(document, "pause", function () {
                                 alert("Pause");
