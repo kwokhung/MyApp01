@@ -87,14 +87,13 @@ var main = function () {
                             });
 
                             navigator.camera.getPicture(function (imageData) {
-                                //$('.employee-image', this.el).attr('src', "data:image/jpeg;base64," + imageData);
                                 document.getElementById("imgPhoto").src = "data:image/jpeg;base64," + imageData;
                             }, function () {
                                 alert("Error getting picture.");
                             }, {
                                 quality: 50,
                                 destinationType: Camera.DestinationType.DATA_URL,
-                                sourceType: 1,      // 0:Photo Library, 1=Camera, 2=Saved Photo Album
+                                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,      // 0:Photo Library, 1=Camera, 2=Saved Photo Album
                                 encodingType: 0     // 0=JPG 1=PNG
                             });
                         }
