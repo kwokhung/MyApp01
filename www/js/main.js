@@ -87,7 +87,7 @@ var main = function () {
                             options.filter = "Au";
                             options.multiple = true;
 
-                            navigator.contacts.find(["displayName", "name"], function (contacts) {
+                            navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
                                 for (var i = 0; i < contacts.length; i++) {
                                     alert(contacts[i].displayName);
                                     for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
