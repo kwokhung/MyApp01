@@ -70,7 +70,7 @@ var main = function () {
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
                             var options = new ContactFindOptions();
-                            options.filter = "Chu";
+                            options.filter = "\u6731\u570b\u96c4";
                             options.multiple = true;
 
                             navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
