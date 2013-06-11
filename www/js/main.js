@@ -75,7 +75,7 @@ var main = function () {
                             }, function () {
                                 alert("Error getting contacts.");
                             }, new ContactFindOptions({
-                                filter: "Linus",
+                                filter: "Au",
                                 multiple: true
                             }));
 
