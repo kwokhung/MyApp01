@@ -84,7 +84,7 @@ var main = function () {
                             }*/
 
                             var options = new ContactFindOptions();
-                            options.filter = "Au";
+                            options.filter = "Brian";
                             options.multiple = true;
 
                             navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
