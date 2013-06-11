@@ -69,6 +69,14 @@ var main = function () {
 
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
+                            var contact = navigator.contacts.create();
+                            contact.name = { givenName: employee.firstName, familyName: employee.lastName };
+                            var phoneNumbers = [];
+                            phoneNumbers[0] = new ContactField('work', employee.officePhone, false);
+                            phoneNumbers[1] = new ContactField('mobile', employee.cellPhone, true); // preferred number
+                            contact.phoneNumbers = phoneNumbers;
+                            contact.save();
+
                             var myContact = navigator.contacts.create({ "displayName": "Au" });
 
                             if (myContact != null && myContact.phoneNumbers.length > 0) {
