@@ -92,9 +92,9 @@ var main = function () {
                                 alert("Error getting picture.");
                             }, {
                                 quality: 50,
-                                destinationType: Camera.DestinationType.DATA_URL,
-                                sourceType: Camera.PictureSourceType./*PHOTOLIBRARY*/SAVEDPHOTOALBUM,      // 0:Photo Library, 1=Camera, 2=Saved Photo Album
-                                encodingType: 0     // 0=JPG 1=PNG
+                                destinationType: Camera.DestinationType.DATA_URL/*FILE_URI*//*NATIVE_URI*/,
+                                sourceType: Camera.PictureSourceType./*PHOTOLIBRARY*/CAMERA/*SAVEDPHOTOALBUM*/,
+                                encodingType: Camera.EncodingType.JPEG/*PNG*/
                             });
                         }
                     });
