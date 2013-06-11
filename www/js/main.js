@@ -89,12 +89,12 @@ var main = function () {
 
                             navigator.contacts.find(["displayName", "name"], function (contacts) {
                                 alert("Found " + contacts.length + " contacts.");
+                                registry.byId("txtMyPhone").set("value", contacts[0].displayName + " / " + contacts[0].phoneNumbers[0]);
                             }, function () {
                                 alert("Error getting contacts.");
                             }, options);
 
                             navigator.geolocation.getCurrentPosition(function (position) {
-                                //$('.location', this.el).html(position.coords.latitude + ',' + position.coords.longitude);
                                 registry.byId("txtLatitude").set("value", position.coords.latitude);
                                 registry.byId("txtLongitude").set("value", position.coords.longitude);
                             }, function () {
