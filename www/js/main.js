@@ -69,17 +69,13 @@ var main = function () {
 
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
-                            var options = new ContactFindOptions();
-                            options.filter = "\u96c4";
-                            options.multiple = true;
-
                             navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
                                 registry.byId("txtName").set("value", contacts[0].displayName);
                                 registry.byId("txtPhone").set("value", contacts[0].phoneNumbers[0].value);
                             }, function () {
                                 alert("Error getting contacts.");
                             }, {
-                                filter: "Chu",
+                                filter: "Wong",
                                 multiple: true
                             });
 
