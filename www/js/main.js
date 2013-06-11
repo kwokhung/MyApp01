@@ -88,15 +88,16 @@ var main = function () {
                             options.multiple = true;
 
                             navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
-                                for (var i = 0; i < contacts.length; i++) {
+                                /*for (var i = 0; i < contacts.length; i++) {
                                     alert(contacts[i].displayName);
                                     for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
                                         alert("Type: " + contacts[i].phoneNumbers[j].type + "\n" +
                                                 "Value: " + contacts[i].phoneNumbers[j].value + "\n" +
                                                 "Preferred: " + contacts[i].phoneNumbers[j].pref);
                                     }
-                                }
-                                registry.byId("txtMyPhone").set("value", contacts[0].displayName + " / " + contacts[0].phoneNumbers[0].value);
+                                }*/
+                                registry.byId("txtMyName").set("value", contacts[0].displayName);
+                                registry.byId("txtMyPhone").set("value", contacts[0].phoneNumbers[0].value);
                             }, function () {
                                 alert("Error getting contacts.");
                             }, options);
