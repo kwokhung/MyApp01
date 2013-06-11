@@ -69,33 +69,11 @@ var main = function () {
 
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
-                            /*var contact = navigator.contacts.create();
-                            contact.name = { givenName: employee.firstName, familyName: employee.lastName };
-                            var phoneNumbers = [];
-                            phoneNumbers[0] = new ContactField('work', employee.officePhone, false);
-                            phoneNumbers[1] = new ContactField('mobile', employee.cellPhone, true);
-                            contact.phoneNumbers = phoneNumbers;
-                            contact.save();
-
-                            var myContact = navigator.contacts.create({ "displayName": "Au" });
-
-                            if (myContact != null && myContact.phoneNumbers.length > 0) {
-                                registry.byId("txtMyPhone").set("value", myContact.phoneNumbers[0]);
-                            }*/
-
                             var options = new ContactFindOptions();
                             options.filter = "Brian";
                             options.multiple = true;
 
                             navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
-                                /*for (var i = 0; i < contacts.length; i++) {
-                                    alert(contacts[i].displayName);
-                                    for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
-                                        alert("Type: " + contacts[i].phoneNumbers[j].type + "\n" +
-                                                "Value: " + contacts[i].phoneNumbers[j].value + "\n" +
-                                                "Preferred: " + contacts[i].phoneNumbers[j].pref);
-                                    }
-                                }*/
                                 registry.byId("txtMyName").set("value", contacts[0].displayName);
                                 registry.byId("txtMyPhone").set("value", contacts[0].phoneNumbers[0].value);
                             }, function () {
