@@ -46,7 +46,7 @@ var main = function () {
                             });*/
 
                             on(document, "menubutton", function () {
-                                navigator.notification.alert("My Application 01.", null, "About", 'OK');
+                                navigator.notification.alert("This is My Application 01.", null, "About", 'OK');
                             });
 
                             /*on(document, "searchbutton", function () {
@@ -80,10 +80,18 @@ var main = function () {
                             options.multiple = true;
 
                             navigator.contacts.find(["displayName", "name"], function (contacts) {
-                                alert('Found ' + contacts.length + ' contacts.');
-                            }, function (contactError) {
-                                alert('onError!');
+                                alert("Found " + contacts.length + " contacts.");
+                            }, function () {
+                                alert("Error getting contacts.");
                             }, options);
+
+                            navigator.geolocation.getCurrentPosition(function (position) {
+                                //$('.location', this.el).html(position.coords.latitude + ',' + position.coords.longitude);
+                                registry.byId("txtLatitude").set("value", position.coords.latitude);
+                                registry.byId("txtLongitude").set("value", position.coords.longitude);
+                            }, function () {
+                                alert("Error getting location.");
+                            });
                         }
                     });
                 });
