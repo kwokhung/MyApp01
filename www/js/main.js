@@ -46,7 +46,7 @@ var main = function () {
                             });*/
 
                             on(document, "menubutton", function () {
-                                alert("Menu");
+                                navigator.notification.alert("My Application 01.", null, "About", 'OK');
                             });
 
                             /*on(document, "searchbutton", function () {
@@ -70,9 +70,6 @@ var main = function () {
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
                             var myContact = navigator.contacts.create({ "displayName": "Au" });
-                            alert(myContact.displayName);
-                            navigator.notification.alert(myContact.displayName, null, "displayName", 'OK');
-                            alert(myContact.phoneNumbers);
 
                             if (myContact != null && myContact.phoneNumbers.length > 0) {
                                 registry.byId("txtMyPhone").set("value", myContact.phoneNumbers[0]);
