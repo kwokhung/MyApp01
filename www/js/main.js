@@ -69,19 +69,15 @@ var main = function () {
 
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
 
-                            var options = new ContactFindOptions();
-                            options.filter = "Brian";
-                            options.multiple = true;
-
                             navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
                                 registry.byId("txtMyName").set("value", contacts[0].displayName);
                                 registry.byId("txtMyPhone").set("value", contacts[0].phoneNumbers[0].value);
                             }, function () {
                                 alert("Error getting contacts.");
-                            }, {
-                                filter: "Brian",
+                            }, new ContactFindOptions({
+                                filter: "Linus",
                                 multiple: true
-                            });
+                            }));
 
                             navigator.geolocation.getCurrentPosition(function (position) {
                                 registry.byId("txtLatitude").set("value", position.coords.latitude);
