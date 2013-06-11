@@ -73,8 +73,8 @@ var main = function () {
                                 filter: "Brian",
                                 multiple: true
                             });
-                            //options.filter = "Linus";
-                            //options.multiple = true;
+                            options.filter = "Linus";
+                            options.multiple = true;
 
                             navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
                                 registry.byId("txtName").set("value", contacts[0].displayName);
