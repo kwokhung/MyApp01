@@ -88,6 +88,7 @@ var main = function () {
 
                             navigator.camera.getPicture(function (imageData) {
                                 //$('.employee-image', this.el).attr('src', "data:image/jpeg;base64," + imageData);
+                                document.getElementById("imgPhoto").src = "data:image/jpeg;base64," + imageData;
                             }, function () {
                                 alert("Error getting picture.");
                             }, {
