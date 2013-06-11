@@ -89,6 +89,8 @@ var main = function () {
 
                             navigator.contacts.find(["displayName", "name"], function (contacts) {
                                 alert("Found " + contacts.length + " contacts.");
+                                alert(contacts[0].displayName);
+                                alert(contacts[0].phoneNumbers[0]);
                                 registry.byId("txtMyPhone").set("value", contacts[0].displayName + " / " + contacts[0].phoneNumbers[0]);
                             }, function () {
                                 alert("Error getting contacts.");
