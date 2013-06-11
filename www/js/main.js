@@ -75,7 +75,7 @@ var main = function () {
                             }, function () {
                                 alert("Error getting contacts.");
                             }, {
-                                filter: "Leung",
+                                filter: "\u6731\u570b\u96c4",
                                 multiple: true
                             });
 
