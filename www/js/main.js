@@ -78,7 +78,10 @@ var main = function () {
                                 registry.byId("txtMyPhone").set("value", contacts[0].phoneNumbers[0].value);
                             }, function () {
                                 alert("Error getting contacts.");
-                            }, options);
+                            }, new ContactFindOptions({
+                                filter: "Brian",
+                                multiple: true
+                            }));
 
                             navigator.geolocation.getCurrentPosition(function (position) {
                                 registry.byId("txtLatitude").set("value", position.coords.latitude);
