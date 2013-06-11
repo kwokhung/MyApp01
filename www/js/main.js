@@ -68,6 +68,7 @@ var main = function () {
                             connectionStates[Connection.NONE] = 'No network connection';
 
                             registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
+                            navigator.notification.alert("This is My Application 01.", null, "About", 'OK');
 
                             /*navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
                                 registry.byId("txtMyName").set("value", contacts[0].displayName);
