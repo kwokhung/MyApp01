@@ -75,7 +75,7 @@ var main = function () {
                             }, function () {
                                 alert("Error getting contacts.");
                             }, {
-                                filter: "Wong",
+                                filter: "Leung",
                                 multiple: true
                             });
 
