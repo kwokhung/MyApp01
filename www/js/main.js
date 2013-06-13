@@ -5,7 +5,8 @@ var main = function () {
         "dojox/dgauges/components/default/CircularLinearGauge",
         "dojox/dgauges/components/default/HorizontalLinearGauge",
         "dojox/dgauges/components/classic/CircularLinearGauge",
-        "dojox/dgauges/components/classic/HorizontalLinearGauge"
+        "dojox/dgauges/components/classic/HorizontalLinearGauge",
+        "app/widget/special/layout/PnlMain",
     ],
     function (ready) {
         ready(function () {
