@@ -1,13 +1,16 @@
 define([
     "dojo/_base/declare",
-    "dojox/mobile/ContentPane"
-], function (declare, ContentPane) {
+    "dojox/mobile/ContentPane",
+    "app/util/app"
+], function (declare, ContentPane, app) {
     return declare("app.widget.special.layout.PnlMain", [ContentPane], {
         postCreate: function () {
             this.inherited(arguments);
             alert("PnlMain Begin");
+            console.debug(app);
+            console.debug(app.device);
 
-            if (typeof device != "undefined") {
+            if (app.device != null) {
                 /*on(document, "pause", function () {
                     alert("Pause");
                 });
@@ -29,17 +32,17 @@ define([
                 });*/
 
                 on(document, "menubutton", function () {
-                    navigator.notification.alert("This is My Application 01.", null, "About", 'OK');
+                    app.navigator.notification.alert("This is My Application 01.", null, "About", 'OK');
                 });
 
                 /*on(document, "searchbutton", function () {
                     alert("Search");
                 });*/
 
-                registry.byId("txtPlatform").set("value", device.platform);
-                registry.byId("txtVersion").set("value", device.version);
+                registry.byId("txtPlatform").set("value", app.device.platform);
+                registry.byId("txtVersion").set("value", app.device.version);
 
-                if (typeof navigator != "undefined") {
+                if (app.navigator != null) {
                     var connectionStates = {};
                     connectionStates[Connection.UNKNOWN] = 'Unknown connection';
                     connectionStates[Connection.ETHERNET] = 'Ethernet connection';
@@ -49,9 +52,9 @@ define([
                     connectionStates[Connection.CELL_4G] = 'Cell 4G connection';
                     connectionStates[Connection.NONE] = 'No network connection';
 
-                    registry.byId("txtConnection").set("value", connectionStates[navigator.network.connection.type]);
+                    registry.byId("txtConnection").set("value", connectionStates[app.navigator.network.connection.type]);
 
-                    navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
+                    app.navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
                         registry.byId("txtName").set("value", contacts[0].displayName);
                         registry.byId("txtPhone").set("value", contacts[0].phoneNumbers[0].value);
                     }, function () {
@@ -61,14 +64,14 @@ define([
                         multiple: true
                     });
 
-                    navigator.geolocation.getCurrentPosition(function (position) {
+                    app.navigator.geolocation.getCurrentPosition(function (position) {
                         registry.byId("txtLatitude").set("value", position.coords.latitude);
                         registry.byId("txtLongitude").set("value", position.coords.longitude);
                     }, function () {
                         alert("Error getting location.");
                     });
 
-                    navigator.camera.getPicture(function (imageData) {
+                    app.navigator.camera.getPicture(function (imageData) {
                         document.getElementById("imgPhoto").src = "data:image/jpeg;base64," + imageData;
                     }, function () {
                         alert("Error getting picture.");

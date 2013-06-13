@@ -21,9 +21,17 @@ var main = function () {
                 require([
                     "dojo/on",
                     "dijit/registry",
+                    "app/util/app",
                     "dojo/domReady!"
                 ],
-                function (on, registry) {
+                function (on, registry, app) {
+                    if (typeof device != "undefined") {
+                        app.device = device;
+                    }
+
+                    if (typeof navigator != "undefined") {
+                        app.navigator = navigator;
+                    }
                 });
             });
         });
