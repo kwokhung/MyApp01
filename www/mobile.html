@@ -9,8 +9,6 @@
     </style>
     <script type="text/javascript">
         var dojoConfig = {
-            baseUrl: ".",
-            tlmSiblingOfDojo: false,
             selectorEngine: "lite",
             isDebug: true,
             parseOnLoad: true,
@@ -19,7 +17,7 @@
             packages: [
                 {
                     "name": "app",
-                    "location": "js/app"
+                    "location": "/www/js/app"
                 }
             ],
             locale: (location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "en"),
