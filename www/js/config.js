@@ -1,5 +1,5 @@
 var dojoConfig = {
-    baseUrl: "..",
+    baseUrl: "C:/Projects/MyApp01/www",
     selectorEngine: "lite",
     isDebug: true,
     parseOnLoad: true,
@@ -7,20 +7,16 @@ var dojoConfig = {
     hashPollFrequency: 100,
     packages: [
         {
-            "name": "dojo",
-            "location": "js/dojo"
-        },
-        {
             "name": "dojox",
-            "location": "js/dojox"
+            "location": "C:/Projects/MyApp01/www/js/dojox"
         },
         {
             "name": "dijit",
-            "location": "js/dijit"
+            "location": "C:/Projects/MyApp01/www/js/dijit"
         },
         {
             "name": "app",
-            "location": "js/app"
+            "location": "C:/Projects/MyApp01/www/js/app"
         }
     ],
     locale: (location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "en"),
