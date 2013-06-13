@@ -12,6 +12,7 @@ define([
             console.debug(app.navigator);
 
             if (app.device != null) {
+                alert("Device");
                 /*on(document, "pause", function () {
                     alert("Pause");
                 });
@@ -50,6 +51,7 @@ define([
             }
 
             if (app.navigator != null) {
+                alert("Navigator");
                 var connectionStates = {};
                 connectionStates[Connection.UNKNOWN] = 'Unknown connection';
                 connectionStates[Connection.ETHERNET] = 'Ethernet connection';
