@@ -11,10 +11,12 @@ var main = function () {
             app.test = "haha";
 
             if (typeof device != "undefined") {
+                alert("device");
                 app.device = device;
             }
 
             if (typeof navigator != "undefined") {
+                alert("navigator");
                 app.navigator = navigator;
             }
 
