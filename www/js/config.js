@@ -1,7 +1,7 @@
 var dojoConfig = {
     selectorEngine: "lite",
     isDebug: true,
-    parseOnLoad: true,
+    parseOnLoad: false,
     async: true,
     hashPollFrequency: 100,
     packages: [

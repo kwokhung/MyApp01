@@ -13,8 +13,6 @@ var main = function () {
             }
 
             require([
-                "dojox/mobile",
-                "dojox/mobile/parser",
                 "dojox/mobile/compat",
                 "dojox/mobile/deviceTheme",
                 "dojox/dgauges/components/default/CircularLinearGauge",
@@ -26,10 +24,10 @@ var main = function () {
 
             ready(function () {
                 require([
-                    "dojo/on",
-                    "dijit/registry",
+                    "dojox/mobile/parser",
                     "dojo/domReady!"
-                ], function (on, registry) {
+                ], function (parser) {
+                    parser.parse();
                 });
             });
         });
