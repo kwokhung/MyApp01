@@ -6,6 +6,10 @@ var dojoConfig = {
     hashPollFrequency: 100,
     packages: [
         {
+            "name": "dojox",
+            "location": "/www/js/dojox"
+        },
+        {
             "name": "app",
             "location": "/www/js/app"
         }
