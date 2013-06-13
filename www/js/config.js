@@ -1,4 +1,5 @@
 var dojoConfig = {
+    baseUrl: "/www",
     selectorEngine: "lite",
     isDebug: true,
     parseOnLoad: true,
@@ -7,11 +8,11 @@ var dojoConfig = {
     packages: [
         {
             "name": "dojox",
-            "location": "/www/js/dojox"
+            "location": "js/dojox"
         },
         {
             "name": "app",
-            "location": "/www/js/app"
+            "location": "js/app"
         }
     ],
     locale: (location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "en"),
