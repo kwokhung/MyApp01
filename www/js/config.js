@@ -1,5 +1,5 @@
 var dojoConfig = {
-    baseUrl: "/",
+    baseUrl: "/www",
     tlmSiblingOfDojo: false,
     selectorEngine: "lite",
     isDebug: true,
