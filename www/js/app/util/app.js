@@ -6,6 +6,7 @@ define([
         var app = Global.getInstance().app;
 
         if (!app.isInitialized) {
+            app.test = "hihi";
             app.isInitialized = true;
         }
 

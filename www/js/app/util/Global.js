@@ -5,6 +5,7 @@ define([
         var Global = declare(null, {
             app: {
                 isInitialized: false,
+                test: "",
                 device: null,
                 navigator: null
             }
