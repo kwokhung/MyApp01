@@ -1,9 +1,10 @@
 define([
     "dojo/_base/declare",
+    "dojo/on",
     "dijit/registry",
     "dojox/mobile/ContentPane",
     "app/util/app"
-], function (declare, registry, ContentPane, app) {
+], function (declare, on, registry, ContentPane, app) {
     return declare("app.widget.special.layout.PnlMain", [ContentPane], {
         postCreate: function () {
             this.inherited(arguments);
