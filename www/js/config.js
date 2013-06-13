@@ -1,4 +1,6 @@
 var dojoConfig = {
+    baseUrl: ".",
+    tlmSiblingOfDojo: false,
     selectorEngine: "lite",
     isDebug: true,
     parseOnLoad: true,
