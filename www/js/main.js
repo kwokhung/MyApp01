@@ -2,21 +2,13 @@ var main = function () {
     require([
         "dojo/ready",
         "app/util/app"
-    ],
-    function (ready, app) {
+    ], function (ready, app) {
         ready(function () {
-            alert("main");
-            console.debug(app);
-            console.debug(app.test);
-            app.test = "haha";
-
             if (typeof device != "undefined") {
-                alert("device");
                 app.device = device;
             }
 
             if (typeof navigator != "undefined") {
-                alert("navigator");
                 app.navigator = navigator;
             }
 
@@ -37,8 +29,7 @@ var main = function () {
                     "dojo/on",
                     "dijit/registry",
                     "dojo/domReady!"
-                ],
-                function (on, registry) {
+                ], function (on, registry) {
                 });
             });
         });
