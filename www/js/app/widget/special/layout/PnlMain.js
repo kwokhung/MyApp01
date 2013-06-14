@@ -16,39 +16,9 @@ define([
                 }
 
                 if (app.device != null) {
-                    /*on(document, "pause", function () {
-                        alert("Pause");
-                    });
-    
-                    on(document, "resume", function () {
-                        alert("Resume");
-                    });
-    
-                    on(document, "online", function () {
-                        alert("Online");
-                    });
-    
-                    on(document, "offline", function () {
-                        alert("Offline");
-                    });
-    
-                    on(document, "backbutton", function () {
-                        alert("Back");
-                    });*/
-
                     on(document, "menubutton", function () {
-                        /*if (app.navigator != null) {
-                            app.navigator.notification.alert("This is My Application 01.", null, "About", "OK");
-                        }
-                        else {
-                            alert("This is My Application 01.");
-                        }*/
                         app.generalHelper.alert("About", "This is My Application 01.");
                     });
-
-                    /*on(document, "searchbutton", function () {
-                        alert("Search");
-                    });*/
 
                     registry.byId("txtPlatform").set("value", app.device.platform);
                     registry.byId("txtVersion").set("value", app.device.version);
@@ -72,8 +42,8 @@ define([
                         app.navigator.contacts.find(["displayName", "phoneNumbers"], function (contacts) {
                             registry.byId("txtName").set("value", contacts[0].displayName);
                             registry.byId("txtPhone").set("value", contacts[0].phoneNumbers[0].value);
-                        }, function () {
-                            alert("Error getting contacts.");
+                        }, function (error) {
+                            app.generalHelper.alert("Error getting contacts.", "Error Code: " + error.code);
                         }, {
                             filter: "\u6731\u570b\u96c4",
                             multiple: true
@@ -85,7 +55,6 @@ define([
                             registry.byId("txtLatitude").set("value", position.coords.latitude);
                             registry.byId("txtLongitude").set("value", position.coords.longitude);
                         }, function (error) {
-                            //alert("Error getting location." + "\n\n" + "Error Code: " + error.code + "\n" + "Error Message: " + error.message);
                             app.generalHelper.alert("Error getting location.", "Error Code: " + error.code + "\n" + "Error Message: " + error.message);
                         }, {
                             enableHighAccuracy: false
@@ -98,7 +67,7 @@ define([
                             registry.byId("txtY").set("value", acceleration.y);
                             registry.byId("txtZ").set("value", acceleration.z);
                         }, function () {
-                            alert("Error getting acceleration.");
+                            app.generalHelper.alert("Error getting acceleration.", "");
                         }, {
                             frequency: 1000
                         });
