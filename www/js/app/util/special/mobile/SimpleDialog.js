@@ -20,6 +20,8 @@ define([
             return promise;
         },
         destroy: function () {
+            this.hide();
+
             if (this._deferred) {
                 this._deferred.cancel();
             }

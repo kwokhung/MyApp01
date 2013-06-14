@@ -16,7 +16,7 @@ define([
                     e.preventDefault();
                 }
 
-                app.serviceHelper.requestGetTextServiceNoBlock(
+                app.serviceHelper.requestGetService(
                     string.substitute("${serviceUrl}?service=${service}&languageDisplay=${languageDisplay}", {
                         serviceUrl: "https://www.guococom.com/GuocoCommoditiesServer/serviceportal.aspx",
                         service: "marketoutlook",
