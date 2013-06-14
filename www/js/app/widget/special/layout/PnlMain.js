@@ -86,7 +86,7 @@ define([
                         }, function (error) {
                             alert("Error getting location." + "\n\n" + "Error Code: " + error.code + "\n" + "Error Message: " + error.message);
                         }, {
-                            timeout: 5000
+                            enableHighAccuracy: true
                         });
                     }
 
