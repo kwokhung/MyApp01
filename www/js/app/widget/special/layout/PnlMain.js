@@ -107,8 +107,8 @@ define([
                     if (typeof app.navigator.camera != "undefined") {
                         app.navigator.camera.getPicture(function (imageData) {
                             document.getElementById("imgPhoto").src = "data:image/jpeg;base64," + imageData;
-                        }, function () {
-                            alert("Error getting picture.");
+                        }, function (message) {
+                            app.generalHelper.alert("Error getting picture.", "Error Message: " + message);
                         }, {
                             quality: 50,
                             destinationType: Camera.DestinationType.DATA_URL/*FILE_URI*//*NATIVE_URI*/,

@@ -1,18 +1,10 @@
 define([
     "dojo/_base/declare",
-    "dojo/_base/kernel",
     "app/util/Global"
-], function (declare, kernel, Global) {
+], function (declare, Global) {
     var app = Global.getInstance().app;
 
     return declare(null, {
-        dumpObject: function (objectName, object) {
-            try {
-                console.log("%s: %o", objectName, object);
-            }
-            catch (ex) {
-            }
-        },
         alert: function (title, message) {
             if (app.navigator != null) {
                 if (typeof app.navigator.notification != "undefined") {
