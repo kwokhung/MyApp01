@@ -80,7 +80,7 @@ define([
                     }
 
                     if (typeof app.navigator.geolocation != "undefined") {
-                        app.navigator.geolocation.watchPosition(function (position) {
+                        app.navigator.geolocation.getCurrentPosition(function (position) {
                             registry.byId("txtLatitude").set("value", position.coords.latitude);
                             registry.byId("txtLongitude").set("value", position.coords.longitude);
                         }, function (error) {
