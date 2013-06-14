@@ -56,13 +56,13 @@ define([
                 if (app.navigator != null) {
                     if (typeof app.navigator.network != "undefined") {
                         var connectionStates = {};
-                        connectionStates[Connection.UNKNOWN] = 'Unknown connection';
-                        connectionStates[Connection.ETHERNET] = 'Ethernet connection';
-                        connectionStates[Connection.WIFI] = 'WiFi connection';
-                        connectionStates[Connection.CELL_2G] = 'Cell 2G connection';
-                        connectionStates[Connection.CELL_3G] = 'Cell 3G connection';
-                        connectionStates[Connection.CELL_4G] = 'Cell 4G connection';
-                        connectionStates[Connection.NONE] = 'No network connection';
+                        connectionStates[Connection.UNKNOWN] = "Unknown connection";
+                        connectionStates[Connection.ETHERNET] = "Ethernet connection";
+                        connectionStates[Connection.WIFI] = "WiFi connection";
+                        connectionStates[Connection.CELL_2G] = "Cell 2G connection";
+                        connectionStates[Connection.CELL_3G] = "Cell 3G connection";
+                        connectionStates[Connection.CELL_4G] = "Cell 4G connection";
+                        connectionStates[Connection.NONE] = "No network connection";
 
                         registry.byId("txtConnection").set("value", connectionStates[app.navigator.network.connection.type]);
                     }
@@ -80,11 +80,13 @@ define([
                     }
 
                     if (typeof app.navigator.geolocation != "undefined") {
-                        app.navigator.geolocation.getCurrentPosition(function (position) {
+                        app.navigator.geolocation.watchPosition(function (position) {
                             registry.byId("txtLatitude").set("value", position.coords.latitude);
                             registry.byId("txtLongitude").set("value", position.coords.longitude);
-                        }, function () {
-                            alert("Error getting location.");
+                        }, function (error) {
+                            alert("Error getting location." + "\n\n" + "Error Code: " + error.code + "\n" + "Error Message: " + error.message);
+                        }, {
+                            timeout: 5000
                         });
                     }
 
