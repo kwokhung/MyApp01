@@ -2,10 +2,11 @@ define([
     "dojo/_base/declare",
     "dojo/_base/lang",
     "dojo/on",
+    "dojo/string",
     "dijit/registry",
     "dojox/mobile/ContentPane",
     "app/util/app"
-], function (declare, lang, on, registry, ContentPane, app) {
+], function (declare, lang, on, string, registry, ContentPane, app) {
     return declare("app.widget.special.layout.PnlMain", [ContentPane], {
         postCreate: function () {
             this.inherited(arguments);
@@ -14,6 +15,17 @@ define([
                 if (e != null) {
                     e.preventDefault();
                 }
+
+                app.serviceHelper.requestGetTextServiceNoBlock(
+                    string.substitute("${serviceUrl}?service=${service}&languageDisplay=${languageDisplay}", {
+                        serviceUrl: "https://www.guococom.com/GuocoCommoditiesServer/serviceportal.aspx",
+                        service: "marketoutlook",
+                        languageDisplay: app.language
+                    }),
+                    null,
+                    function (response) {
+                        app.generalHelper.dumpObject("analysis", response.analysis);
+                    });
 
                 if (app.device != null) {
                     on(document, "menubutton", function () {
