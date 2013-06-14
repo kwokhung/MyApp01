@@ -1,8 +1,10 @@
 define([
     "dojo/_base/declare",
     "dojo/_base/kernel",
+    "dojo/topic",
+    "dojo/cookie",
     "app/util/Global"
-], function (declare, kernel, Global) {
+], function (declare, kernel, topic, cookie, Global) {
     var app = Global.getInstance().app;
 
     return declare(null, {
@@ -33,6 +35,17 @@ define([
                 "dojo/i18n!app/nls/Bundle"
             ], function (bundle) {
                 app.bundle = bundle;
+            });
+        },
+        switchLanguage: function (language) {
+            app.language = language;
+
+            topic.publish("/change/language", [{
+                language: language
+            }]);
+
+            cookie("language", language, {
+                expires: 30
             });
         }
     });

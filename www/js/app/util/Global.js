@@ -1,7 +1,8 @@
 define([
     "dojo/_base/declare",
+    "dojo/cookie",
     "dojo/i18n!app/nls/Bundle"
-], function (declare, bundle) {
+], function (declare, cookie, bundle) {
     var Global = declare(null, {
         app: {
             isInitialized: false,
@@ -11,7 +12,8 @@ define([
             nwHelper: null,
             serviceHelper: null,
             device: null,
-            navigator: null
+            navigator: null,
+            language: (cookie("language") == null ? "E" : cookie("language"))
         }
     });
 

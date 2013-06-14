@@ -36,6 +36,8 @@ var profile = {
                 "dojo/string",
                 "dojo/i18n",
                 "dojo/Deferred",
+                "dojo/topic",
+                "dojo/cookie",
                 "dijit/registry",
                 //"dijit/Dialog",
                 "dojox/io/windowName",
