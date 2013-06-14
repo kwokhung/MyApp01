@@ -15,12 +15,6 @@ define([
                     e.preventDefault();
                 }
 
-                var ref = window.open("http://apache.org", "_blank", "location=yes");
-
-                /*setTimeout(function () {
-                    ref.close();
-                }, 5000);*/
-
                 if (app.device != null) {
                     /*on(document, "pause", function () {
                         alert("Pause");
@@ -43,12 +37,13 @@ define([
                     });*/
 
                     on(document, "menubutton", function () {
-                        if (app.navigator != null) {
+                        /*if (app.navigator != null) {
                             app.navigator.notification.alert("This is My Application 01.", null, "About", "OK");
                         }
                         else {
                             alert("This is My Application 01.");
-                        }
+                        }*/
+                        app.generalHelper.alert("About", "This is My Application 01.");
                     });
 
                     /*on(document, "searchbutton", function () {
@@ -90,7 +85,8 @@ define([
                             registry.byId("txtLatitude").set("value", position.coords.latitude);
                             registry.byId("txtLongitude").set("value", position.coords.longitude);
                         }, function (error) {
-                            alert("Error getting location." + "\n\n" + "Error Code: " + error.code + "\n" + "Error Message: " + error.message);
+                            //alert("Error getting location." + "\n\n" + "Error Code: " + error.code + "\n" + "Error Message: " + error.message);
+                            app.generalHelper.alert("Error getting location.", "Error Code: " + error.code + "\n" + "Error Message: " + error.message);
                         }, {
                             enableHighAccuracy: false
                         });

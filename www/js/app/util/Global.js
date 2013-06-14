@@ -4,6 +4,7 @@ define([
     var Global = declare(null, {
         app: {
             isInitialized: false,
+            generalHelper: null,
             device: null,
             navigator: null
         }
