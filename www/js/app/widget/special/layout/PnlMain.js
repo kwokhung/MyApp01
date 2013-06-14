@@ -24,7 +24,7 @@ define([
                     }),
                     null,
                     function (response) {
-                        app.generalHelper.dumpObject("analysis", response.analysis);
+                        app.generalHelper.alert("analysis", response.analysis);
                     });
 
                 if (app.device != null) {
