@@ -15,6 +15,12 @@ define([
                     e.preventDefault();
                 }
 
+                var ref = window.open("http://apache.org", "_blank", "location=yes");
+
+                /*setTimeout(function () {
+                    ref.close();
+                }, 5000);*/
+
                 if (app.device != null) {
                     /*on(document, "pause", function () {
                         alert("Pause");
