@@ -1,10 +1,15 @@
 define([
-    "dojo/_base/declare"
-], function (declare) {
+    "dojo/_base/declare",
+    "dojo/i18n!app/nls/Bundle"
+], function (declare, bundle) {
     var Global = declare(null, {
         app: {
             isInitialized: false,
+            bundle: bundle,
             generalHelper: null,
+            uiHelper: null,
+            nwHelper: null,
+            serviceHelper: null,
             device: null,
             navigator: null
         }
