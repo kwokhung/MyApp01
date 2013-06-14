@@ -5,7 +5,7 @@ define([
     "dojo/on",
     "dojo/string",
     "dijit/registry",
-    "dijit/Dialog",
+    "app/util/special/mobile/SimpleDialog",
     "app/util/Global"
 ], function (declare, lang, json, on, string, registry, Dialog, Global) {
     var app = Global.getInstance().app;

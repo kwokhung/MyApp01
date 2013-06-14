@@ -53,6 +53,7 @@ var profile = {
                 "dojox/mobile/SpinWheelSlot",
                 "dojox/mobile/FormLayout",
                 "dojox/mobile/TextBox",
+                "dojox/mobile/SimpleDialog",
                 "dojox/dgauges/components/default/CircularLinearGauge",
                 "dojox/dgauges/components/default/HorizontalLinearGauge",
                 "dojox/dgauges/components/classic/CircularLinearGauge",
