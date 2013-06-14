@@ -3,7 +3,10 @@ define([
     "dojox/mobile/SimpleDialog"
 ], function (declare, SimpleDialog) {
     return declare("app.util.special.mobile.SimpleDialog", [SimpleDialog], {
-        postCreate: function () {
+        show: function () {
+            this.inherited(arguments);
+        },
+        destroy: function () {
             this.inherited(arguments);
         }
     });
