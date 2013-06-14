@@ -35,6 +35,7 @@ var profile = {
                 "dojo/request/iframe",
                 "dojo/string",
                 "dojo/i18n",
+                "dojo/Deferred",
                 "dijit/registry",
                 //"dijit/Dialog",
                 "dojox/io/windowName",
