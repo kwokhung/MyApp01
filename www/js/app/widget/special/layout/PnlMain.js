@@ -37,13 +37,13 @@ define([
                     });*/
 
                     on(document, "menubutton", function () {
-                        if (app.navigator != null) {
+                        /*if (app.navigator != null) {
                             app.navigator.notification.alert("This is My Application 01.", null, "About", "OK");
                         }
                         else {
                             alert("This is My Application 01.");
-                        }
-                        //app.generalHelper.alert("About", "This is My Application 01.");
+                        }*/
+                        app.generalHelper.alert("About", "This is My Application 01.");
                     });
 
                     /*on(document, "searchbutton", function () {

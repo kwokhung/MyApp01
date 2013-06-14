@@ -1,8 +1,10 @@
 define([
     "dojo/_base/declare",
     "dojo/_base/kernel",
-    "app/util/app"
-], function (declare, kernel, app) {
+    "app/util/Global"
+], function (declare, kernel, Global) {
+    var app = Global.getInstance().app;
+
     return declare(null, {
         dumpObject: function (objectName, object) {
             try {
