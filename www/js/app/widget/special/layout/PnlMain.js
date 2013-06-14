@@ -91,12 +91,14 @@ define([
                     }
 
                     if (typeof app.navigator.accelerometer != "undefined") {
-                        app.navigator.accelerometer.getCurrentAcceleration(function (acceleration) {
+                        app.navigator.accelerometer.watchAcceleration(function (acceleration) {
                             registry.byId("txtX").set("value", acceleration.x);
                             registry.byId("txtY").set("value", acceleration.y);
                             registry.byId("txtZ").set("value", acceleration.z);
                         }, function () {
                             alert("Error getting acceleration.");
+                        }, {
+                            frequency: 1000
                         });
                     }
 
