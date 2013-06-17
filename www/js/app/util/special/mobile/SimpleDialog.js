@@ -1,6 +1,7 @@
 define([
     "dojo/_base/declare",
     "dojo/_base/lang",
+    "dojo/on",
     "dojo/dom-construct",
     "dojo/query",
     "dojo/Deferred",
@@ -8,7 +9,7 @@ define([
     "dojox/mobile/Button",
     "dojox/mobile/SimpleDialog",
     "app/util/Global"
-], function (declare, lang, domConstruct, query, Deferred, ProgressIndicator, Button, SimpleDialog, Global) {
+], function (declare, lang, on, domConstruct, query, Deferred, ProgressIndicator, Button, SimpleDialog, Global) {
     var app = Global.getInstance().app;
 
     return declare("app.util.special.mobile.SimpleDialog", [SimpleDialog], {
@@ -29,6 +30,11 @@ define([
 
             return promise;
         },
+        hide: function () {
+            this.inherited(arguments);
+
+            this.progressIndicator.stop();
+        },
         postCreate: function () {
             this.inherited(arguments);
 
@@ -36,7 +42,12 @@ define([
 
             domConstruct.create("div", {
                 "class": "mblSimpleDialogText",
-                innerHTML: "Processing..."
+                innerHTML: this.title
+            }, this.domNode);
+
+            domConstruct.create("div", {
+                "class": "mblSimpleDialogText",
+                innerHTML: this.content
             }, this.domNode);
 
             domConstruct.place(this.progressIndicator.domNode, query("td", domConstruct.create("div", {
@@ -52,20 +63,27 @@ define([
                     "</table>"
             }, this.domNode))[0], "last");
 
-            var cancelBtn = new Button({
+            var btnCancel = new Button({
                 class: "mblSimpleDialogButton mblRedButton",
                 innerHTML: "Cancel"
             });
-            cancelBtn.placeAt(this.domNode);
+            on(btnCancel, "click", lang.hitch(this, function (e) {
+                if (e != null) {
+                    e.preventDefault();
+                }
+
+                this.hide();
+            }));
+            btnCancel.placeAt(this.domNode);
         },
         destroy: function () {
-            //this.hide();
+            this.hide();
 
             if (this._deferred) {
                 this._deferred.cancel();
             }
 
-            //this.inherited(arguments);
+            this.inherited(arguments);
         }
     });
 });
