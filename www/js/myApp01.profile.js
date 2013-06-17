@@ -29,6 +29,8 @@ var profile = {
                 "dojo/on",
                 "dojo/ready",
                 "dojo/domReady",
+                "dojo/dom-construct",
+                "dojo/query",
                 "dojo/json",
                 "dojo/request/xhr",
                 "dojo/request/script",

@@ -1,16 +1,19 @@
 define([
     "dojo/_base/declare",
     "dojo/_base/lang",
+    "dojo/dom-construct",
+    "dojo/query",
     "dojo/Deferred",
     "dojox/mobile/SimpleDialog",
-    "app/util/app"
-], function (declare, lang, Deferred, SimpleDialog, app) {
+    "app/util/Global"
+], function (declare, lang, domConstruct, query, Deferred, SimpleDialog, Global) {
+    var app = Global.getInstance().app;
+
     return declare("app.util.special.mobile.SimpleDialog", [SimpleDialog], {
         show: function () {
             this.inherited(arguments);
 
             this._deferred = new Deferred(lang.hitch(this, function () {
-                app.generalHelper.alert("SimpleDialog", "cancel");
                 delete this._deferred;
             }));
 
@@ -21,15 +24,24 @@ define([
 
             return promise;
         },
+        postCreate: function () {
+            this.inherited(arguments);
+
+            domConstruct.create("div", {
+                "class": "mblSimpleDialogText",
+                innerHTML: "Processing..."
+            }, this.domNode);
+
+            domConstruct.place(this.domNode, query("body", document)[0], "last");
+        },
         destroy: function () {
-            app.generalHelper.alert("SimpleDialog", "destroy");
-            this.hide();
+            //this.hide();
 
             if (this._deferred) {
                 this._deferred.cancel();
             }
 
-            this.inherited(arguments);
+            //this.inherited(arguments);
         }
     });
 });
