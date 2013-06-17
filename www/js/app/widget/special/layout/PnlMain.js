@@ -25,7 +25,8 @@ define([
                     null,
                     function (response) {
                         app.generalHelper.alert("analysis", response.analysis);
-                    });
+                    }
+                );
 
                 if (app.device != null) {
                     on(document, "menubutton", function () {

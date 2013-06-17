@@ -2,13 +2,15 @@ define([
     "dojo/_base/declare",
     "dojo/_base/lang",
     "dojo/Deferred",
-    "dojox/mobile/SimpleDialog"
-], function (declare, lang, Deferred, SimpleDialog) {
+    "dojox/mobile/SimpleDialog",
+    "app/util/app"
+], function (declare, lang, Deferred, SimpleDialog, app) {
     return declare("app.util.special.mobile.SimpleDialog", [SimpleDialog], {
         show: function () {
             this.inherited(arguments);
 
             this._deferred = new Deferred(lang.hitch(this, function () {
+                app.generalHelper.alert("SimpleDialog", "cancel");
                 delete this._deferred;
             }));
 
@@ -20,6 +22,7 @@ define([
             return promise;
         },
         destroy: function () {
+            app.generalHelper.alert("SimpleDialog", "destroy");
             this.hide();
 
             if (this._deferred) {
