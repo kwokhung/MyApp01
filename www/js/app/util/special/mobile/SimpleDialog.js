@@ -5,9 +5,10 @@ define([
     "dojo/query",
     "dojo/Deferred",
     "dojox/mobile/ProgressIndicator",
+    "dojox/mobile/Button",
     "dojox/mobile/SimpleDialog",
     "app/util/Global"
-], function (declare, lang, domConstruct, query, Deferred, ProgressIndicator, SimpleDialog, Global) {
+], function (declare, lang, domConstruct, query, Deferred, ProgressIndicator, Button, SimpleDialog, Global) {
     var app = Global.getInstance().app;
 
     return declare("app.util.special.mobile.SimpleDialog", [SimpleDialog], {
@@ -28,16 +29,25 @@ define([
         postCreate: function () {
             this.inherited(arguments);
 
+            domConstruct.place(this.domNode, query("body", document)[0], "last");
+
+            var piIns = ProgressIndicator.getInstance();
             domConstruct.create("div", {
                 "class": "mblSimpleDialogText",
                 innerHTML: "Processing..."
             }, this.domNode);
 
-            domConstruct.create("div", {
+            /*var piBox = domConstruct.create("div", {
                 "class": "mblSimpleDialogText"
-            }, this.domNode).appendChild(ProgressIndicator.getInstance().domNode);
-
-            domConstruct.place(this.domNode, query("body", document)[0], "last");
+            }, this.domNode);
+            piBox.appendChild(piIns.domNode);*/
+            domConstruct.place(piIns.domNode, this.domNode, "last");
+            var cancelBtn = new Button({
+                class: "mblSimpleDialogButton mblRedButton",
+                innerHTML: "Cancel"
+            });
+            cancelBtn.placeAt(this.domNode);
+            //piIns.start();
         },
         destroy: function () {
             //this.hide();
